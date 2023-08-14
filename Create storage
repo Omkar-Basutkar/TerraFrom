@@ -1,0 +1,12 @@
+provider "aws" {
+  region = "us-west-2"
+access_key = "AKIA5NYFTrftytytyt6IKIKOmnmnmnmnmntytrytGJ4F2"
+  secret_key = "khY5KE19fKgLG+6fNytrytrytrytry2Xba5GhrZo8e7vOytryrtyrtyA0JVg5hI"
+}
+resource "aws_s3_bucket" "example" {
+  bucket = "${var.environment}1234-example-bucket"
+  acl    = "private"
+}
+output "bucket_name" {
+  value = aws_s3_bucket.example.bucket
+}
